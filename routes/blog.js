@@ -16,8 +16,11 @@ router.get('/list', (req, res, next) => {
 
     if(req.query.isadmin) {
       // // 管理员界面
-
+      console.log('is admin');
+      
       if (req.session.username == null) {
+        console.error('is admin ,but no login');
+        
         // 未登录
        res.json(
           new ErrorModel('未登录')
